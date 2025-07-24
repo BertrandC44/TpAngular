@@ -1,8 +1,8 @@
 <h1>FILMS</h1>
-<ul>
+<ul class="uk-height-viewport">
 
   @for (movie of movies; track movie) {
-    <div class="uk-card uk-card-secondary uk-card-hover uk-card-body eni-movie-card"
+    <div class="uk-card  eni-movie-card"
          [ngStyle]="{ 'background-image': 'url(' + movie.cover + ')' }">
       <div class="overlay">
     <h2>{{movie.title}}</h2>
@@ -10,9 +10,12 @@
     <h4>{{movie.duration}} min</h4>
     <div class="star-rating">
       @for (star of stars; track star) {
-        <span [class.filled]="movie.rating >= star">
+        @if (movie.rating >= star){
           <i class="fa-solid fa-star"></i>
-        </span>
+        } @else {
+          <i class="fa-regular fa-star" style="color: #FFD43B;"></i>
+        }
+
       }
       </div>
     <h3>{{movie.genre}}</h3>

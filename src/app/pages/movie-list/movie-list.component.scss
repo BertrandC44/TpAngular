@@ -2,16 +2,16 @@ h1 {
   text-align: center;
 }
 
-
-
 .eni-movie-card{
+  color: white;
   display: flex;
   flex-direction: column;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   width: 40em;
-  padding: 1em;
-  color: white;
+
+
   overflow: hidden;
   margin: 0.5rem 2em;
   text-align: center;
@@ -20,23 +20,35 @@ h1 {
 .eni-movie-card h2 {
   text-align: center;
   color: gold;
+
+}.eni-movie-card h3 {
+  text-align: center;
+  color: white;
+}
+
+.eni-movie-card h4 {
+  text-align: center;
+  color: white;
 }
 .overlay {
-  background: rgba(0, 0, 0, 0.45);
-  overflow: hidden;
-  height: 90%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2));
+  z-index: 1;
+  pointer-events: none;
+
 }
 .synopsis{
   color: white;
 }
 .star-rating {
   font-size: 1.5rem;
-  color: lightgray;
-  text-shadow: 0 0 10px gold, 0 0 5px gold;
+  color: gold;
+  position: revert-layer;
+
 }
 
 .star-rating .filled {
   color: gold;
+  position: revert-layer;
 }
 
 
