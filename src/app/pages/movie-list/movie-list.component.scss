@@ -1,0 +1,45 @@
+h1 {
+  text-align: center;
+}
+
+
+
+.eni-movie-card{
+  display: flex;
+  flex-direction: column;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 40em;
+  padding: 1em;
+  color: white;
+  overflow: hidden;
+  margin: 0.5rem 2em;
+  text-align: center;
+}
+
+.eni-movie-card h2 {
+  text-align: center;
+  color: gold;
+}
+.overlay {
+  background: rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  height: 90%;
+}
+.synopsis{
+  color: white;
+}
+.star-rating {
+  font-size: 1.5rem;
+  color: lightgray;
+  text-shadow: 0 0 10px gold, 0 0 5px gold;
+}
+
+.star-rating .filled {
+  color: gold;
+}
+
+
+
+
+
