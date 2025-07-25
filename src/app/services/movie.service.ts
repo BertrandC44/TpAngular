@@ -48,13 +48,17 @@ export class Movie {
   movies : Movie [] = [];
 }
 
-export class ApiResponse <T> {
-  data: T  | undefined;
+class ApiResponse<T>{
+  public code:String ="";
+  public message:String ="";
+  public data: T;
 
-
-  constructor(data: T | undefined) {
+  constructor(code: String, message: String, data: T) {
+    this.code = code;
+    this.message = message;
     this.data = data;
   }
-
-
 }
+
+
+

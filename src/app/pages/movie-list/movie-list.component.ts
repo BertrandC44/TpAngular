@@ -1,13 +1,16 @@
+import {TranslatePipe} from '@ngx-translate/core';
+
 declare const UIkit: any;
 
 import { Component } from '@angular/core';
 import {NgStyle} from '@angular/common';
-
+import {MovieService} from '../../services/movie.service';
 
 @Component({
   selector: 'app-movie-list',
   imports: [
-    NgStyle
+    NgStyle,
+    TranslatePipe
   ],
   templateUrl: './movie-list.component.html',
   styleUrl: './movie-list.component.scss'
@@ -15,21 +18,18 @@ import {NgStyle} from '@angular/common';
 export class MovieListComponent {
   stars = [1, 2, 3, 4, 5];
 
-constructor(private movieService: MovieService) {
-}
+  movies : any [] = [];
 
-/**
- * Sera appelée via le clique d'un bouton
- */
-callApi() {
-  this.movieService.getMovies().subscribe({
-    next: responseJson => {
-      // je vais récupérer dans tout le json uniquement l'attribut data => la liste des films
-      // rappel le json actuelle => code, message, data (array movies)
-      this.movies = responseJson.data;
-    },
-    error: error => {}
-  });
-}
-}
+ constructor(private movieService: MovieService) {}
+
+    callApi(){
+      this.movieService.getMovies().subscribe({
+        next: (json)=>{
+          console.log(json)
+        // Mettre l'attribut data de notre json dans la liste article
+        this.movies = json.data;
+      },
+      error: err => {}})
+    }
+  }
 
